@@ -10,4 +10,6 @@
 - [日本机戦連盟 厳選燐字辞書](https://github.com/sozysozbot/linzklar_paper_dictionary)
 - [日本机戦連盟 厳選東島通商語辞書](https://github.com/sozysozbot/pmcp_50on/tree/master/dictionary)
 - 表3（うら表紙の裏）
+    - [pemecepe lujot とその筆記体一覧](./pmcp_lujot.png)
 - 表4（うら表紙）
+    - 白紙かなぁ？
