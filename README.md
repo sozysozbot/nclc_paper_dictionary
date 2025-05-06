@@ -6,7 +6,7 @@
 - 表1（おもて表紙）
     - ある程度凝ったデザインで、【言将机戦人等 網別清字言書】「日本机戦連盟 厳選燐字辞書」｛nclc leti tectelit leti pmcp lukup cet｝「日本机戦連盟 厳選東島通商語辞書」が載っているべき
 - 表2（おもて表紙の裏）
-    - 草書の字素一覧
+    - [草書の字素一覧](./pruamarn.png)
 - 遊び紙
 - [日本机戦連盟 厳選(燐字・東島通商語)辞書 巻頭](https://github.com/sozysozbot/nclc_paper_dictionary_opening) ✅
     - 白黒表紙
@@ -16,7 +16,7 @@
     - 燐字タイトルページ
     - この辞典の使い方（燐字辞書側）
 - [日本机戦連盟 厳選燐字辞書 パイグ語文法]
-- [日本机戦連盟 厳選燐字辞書](https://github.com/sozysozbot/linzklar_paper_dictionary)
+- [日本机戦連盟 厳選燐字辞書](https://github.com/sozysozbot/linzklar_paper_dictionary) ✅
     - 目次
     - 本文
     - 仮名索引
@@ -32,7 +32,7 @@
 - 表3（うら表紙の裏）
     - [pemecepe lujot とその筆記体一覧](./pmcp_lujot.png)
 - 表4（うら表紙）
-    - 白紙かなぁ？
+    - 二重枠のみがある
 
 ## 下書き一覧
 
