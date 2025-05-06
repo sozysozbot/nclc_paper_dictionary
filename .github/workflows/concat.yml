@@ -19,19 +19,19 @@ jobs:
       - name: Fetch PDF from repo 巻頭
         run: |
           gh auth login --with-token <<< "$GH_TOKEN"
-          gh run download --repo sozysozbot/nclc_paper_dictionary_opening --name pdf-artifact --dir ./巻頭
+          gh run download --repo sozysozbot/nclc_paper_dictionary_opening --dir ./巻頭
 
       - name: Fetch PDF from repo 燐字辞書
         run: |
-          gh run download  --repo sozysozbot/linzklar_paper_dictionary --name pdf-artifact --dir ./燐字辞書
+          gh run download  --repo sozysozbot/linzklar_paper_dictionary --dir ./燐字辞書
 
       - name: Fetch PDF from repo 巻中
         run: |
-          gh run download --repo sozysozbot/nclc_paper_dictionary_middle --name pdf-artifact --dir ./巻中
+          gh run download --repo sozysozbot/nclc_paper_dictionary_middle --dir ./巻中
 
       - name: Fetch PDF from repo 東島通商語辞書
         run: |
-          gh run download --repo sozysozbot/pmcp_50on --name pdf-artifact --dir ./東島通商語辞書
+          gh run download --repo sozysozbot/pmcp_50on --dir ./東島通商語辞書
 
       - name: Install pdftk
         run: |
