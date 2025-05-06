@@ -38,6 +38,12 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y pdftk
 
+      - name: Debug directory structure with tree
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y tree
+          tree -a -I ".git|.github"
+
       - name: Concatenate into combined.pdf
         run: |
           pdftk ./巻頭/言将机戦人等_網別言書_始.pdf ./燐字辞書/言将机戦人等_網別清字言書.pdf ./巻中/言将机戦人等_網別言書_別.pdf ./東島通商語辞書/nclc-leti-tectelit-leti-pmcp-lukup-cet.pdf cat output combined.pdf
