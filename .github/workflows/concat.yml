@@ -1,0 +1,54 @@
+# .github/workflows/concat.yml in your aggregator repo
+name: Fetch + Concatenate PDFs
+
+on:
+  workflow_dispatch:
+
+jobs:
+  concat:
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ secrets.GH_TOKEN }}   # must have repo/read rights
+
+    steps:
+      - name: Install GitHub CLI
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y gh
+
+      - name: Fetch PDF from repo 巻頭
+        run: |
+          gh auth login --with-token <<< "$GH_TOKEN"
+          # get the latest successful run id for the "build-pdf" workflow
+          RUN_ID=$(gh run list --repo org/repo-巻頭 --workflow build-pdf.yml --limit 1 --json databaseId --jq '.[0].databaseId')
+          gh run download-artifact --repo org/repo-巻頭 --run-id $RUN_ID --name pdf-artifact --dir ./巻頭
+
+      - name: Fetch PDF from repo 燐字辞書
+        run: |
+          RUN_ID=$(gh run list --repo org/repo-燐字辞書 --workflow build-pdf.yml --limit 1 --json databaseId --jq '.[0].databaseId')
+          gh run download-artifact --repo org/repo-燐字辞書 --run-id $RUN_ID --name pdf-artifact --dir ./燐字辞書
+
+      - name: Fetch PDF from repo 巻中
+        run: |
+          RUN_ID=$(gh run list --repo org/repo-巻中 --workflow build-pdf.yml --limit 1 --json databaseId --jq '.[0].databaseId')
+          gh run download-artifact --repo org/repo-巻中 --run-id $RUN_ID --name pdf-artifact --dir ./巻中
+
+      - name: Fetch PDF from repo 東島通商語辞書
+        run: |
+          RUN_ID=$(gh run list --repo org/repo-東島通商語辞書 --workflow build-pdf.yml --limit 1 --json databaseId --jq '.[0].databaseId')
+          gh run download-artifact --repo org/repo-東島通商語辞書 --run-id $RUN_ID --name pdf-artifact --dir ./東島通商語辞書
+
+      - name: Install pdftk
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y pdftk
+
+      - name: Concatenate into combined.pdf
+        run: |
+          pdftk 巻頭/01.pdf 燐字辞書/02.pdf 巻中/03.pdf 東島通商語辞書/04.pdf cat output combined.pdf
+
+      - name: Upload the combined PDF
+        uses: actions/upload-artifact@v3
+        with:
+          name: combined-pdf
+          path: combined.pdf
