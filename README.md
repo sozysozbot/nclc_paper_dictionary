@@ -8,7 +8,7 @@
 - 表2（おもて表紙の裏）
     - 草書の字素一覧
 - 遊び紙
-- [日本机戦連盟 厳選(燐字・東島通商語)辞書 巻頭](https://github.com/sozysozbot/nclc_paper_dictionary_opening)
+- [日本机戦連盟 厳選(燐字・東島通商語)辞書 巻頭](https://github.com/sozysozbot/nclc_paper_dictionary_opening) ✅
     - 白黒表紙
     - 3 言語まえがき
     - 見開き地図
@@ -21,11 +21,11 @@
     - 本文
     - 仮名索引
     - このセクション分のページ数を強勢的に偶数にするための白紙ページ（1~2 ページ）
-- [日本机戦連盟 厳選(燐字・東島通商語)辞書 巻中]
+- [日本机戦連盟 厳選(燐字・東島通商語)辞書 巻中](https://github.com/sozysozbot/nclc_paper_dictionary_middle) ✅
     - 東島通商語タイトルページ
     - この辞典の使い方（東島通商語辞書側）
 - [日本机戦連盟 厳選東島通商語辞書 東島通商語文法]
-- [日本机戦連盟 厳選東島通商語辞書](https://github.com/sozysozbot/pmcp_50on/tree/master/dictionary)
+- [日本机戦連盟 厳選東島通商語辞書](https://github.com/sozysozbot/pmcp_50on/tree/master/dictionary) ✅
     - 目次
     - 本文
 - 遊び紙
