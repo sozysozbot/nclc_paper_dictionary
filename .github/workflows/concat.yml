@@ -19,24 +19,19 @@ jobs:
       - name: Fetch PDF from repo 巻頭
         run: |
           gh auth login --with-token <<< "$GH_TOKEN"
-          # get the latest successful run id for the "ci" workflow
-          RUN_ID=$(gh run list --repo sozysozbot/nclc_paper_dictionary_opening --workflow ci.yml --limit 1 --json databaseId --jq '.[0].databaseId')
-          gh run download $RUN_ID --repo sozysozbot/nclc_paper_dictionary_opening --name pdf-artifact --dir ./巻頭
+          gh run download --repo sozysozbot/nclc_paper_dictionary_opening --name pdf-artifact --dir ./巻頭
 
       - name: Fetch PDF from repo 燐字辞書
         run: |
-          RUN_ID=$(gh run list --repo sozysozbot/linzklar_paper_dictionary --workflow ci.yml --limit 1 --json databaseId --jq '.[0].databaseId')
-          gh run download  $RUN_ID --repo sozysozbot/linzklar_paper_dictionary --name pdf-artifact --dir ./燐字辞書
+          gh run download  --repo sozysozbot/linzklar_paper_dictionary --name pdf-artifact --dir ./燐字辞書
 
       - name: Fetch PDF from repo 巻中
         run: |
-          RUN_ID=$(gh run list --repo sozysozbot/nclc_paper_dictionary_middle --workflow ci.yml --limit 1 --json databaseId --jq '.[0].databaseId')
-          gh run download $RUN_ID --repo sozysozbot/nclc_paper_dictionary_middle --name pdf-artifact --dir ./巻中
+          gh run download --repo sozysozbot/nclc_paper_dictionary_middle --name pdf-artifact --dir ./巻中
 
       - name: Fetch PDF from repo 東島通商語辞書
         run: |
-          RUN_ID=$(gh run list --repo sozysozbot/pmcp_50on --workflow ci.yml --limit 1 --json databaseId --jq '.[0].databaseId')
-          gh run download $RUN_ID --repo sozysozbot/pmcp_50on --name pdf-artifact --dir ./東島通商語辞書
+          gh run download --repo sozysozbot/pmcp_50on --name pdf-artifact --dir ./東島通商語辞書
 
       - name: Install pdftk
         run: |
