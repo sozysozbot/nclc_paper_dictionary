@@ -21,13 +21,9 @@ jobs:
           gh auth login --with-token <<< "$GH_TOKEN"
           gh run download --repo sozysozbot/nclc_paper_dictionary_opening --dir ./巻頭
 
-      - name: Fetch PDF from repo 燐字辞書
+      - name: Fetch PDF from repo 燐字辞書＋巻中
         run: |
           gh run download  --repo sozysozbot/linzklar_paper_dictionary --dir ./燐字辞書
-
-      - name: Fetch PDF from repo 巻中
-        run: |
-          gh run download --repo sozysozbot/nclc_paper_dictionary_middle --dir ./巻中
 
       - name: Fetch PDF from repo 東島通商語辞書
         run: |
@@ -46,7 +42,7 @@ jobs:
 
       - name: Concatenate into combined.pdf
         run: |
-          pdftk ./巻頭/pdf-output/言将机戦人等_網別言書_始.pdf ./燐字辞書/pdf-output/言将机戦人等_網別清字言書.pdf ./巻中/pdf-output/言将机戦人等_網別言書_別.pdf ./東島通商語辞書/pdf-output/nclc-leti-tectelit-leti-pmcp-lukup-cet.pdf cat output combined.pdf
+          pdftk ./巻頭/pdf-output/言将机戦人等_網別言書_始.pdf ./燐字辞書/pdf-output/言将机戦人等_網別清字言書.pdf ./東島通商語辞書/pdf-output/nclc-leti-tectelit-leti-pmcp-lukup-cet.pdf cat output combined.pdf
 
       - name: Upload the combined PDF
         uses: actions/upload-artifact@v4
