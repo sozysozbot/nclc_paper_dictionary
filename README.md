@@ -24,7 +24,7 @@
 - [日本机戦連盟 厳選(燐字・東島通商語)辞書 巻中](https://github.com/sozysozbot/nclc_paper_dictionary_middle) ✅
     - 東島通商語タイトルページ
     - この辞典の使い方（東島通商語辞書側）
-- [日本机戦連盟 厳選東島通商語辞書 東島通商語文法]
+    - 日本机戦連盟 厳選東島通商語辞書 東島通商語文法
 - [日本机戦連盟 厳選東島通商語辞書](https://github.com/sozysozbot/pmcp_50on/tree/master/dictionary) ✅
     - 目次
     - 本文
